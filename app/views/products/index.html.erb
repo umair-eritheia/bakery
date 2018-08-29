@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="text-center mb-4">Products</h2>
+<div class="table-responsive-sm">
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th colspan="1">#</th>
+        <th colspan="1">Name</th>
+        <th colspan="1">Code</th>
+        <th colspan="1">Quantity</th>
+        <th colspan="1">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each_with_index do |product, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= product.name %></td>
+          <td><%= product.code %></td>
+          <td><%= select_tag 'quantity', options_for_select((1..15).step(1)), class: 'form-control' %></td>
+          <td><%= link_to 'javascript:void(0);', class: 'addToCart', id: "addToCart#{product.id}"  do %>
+            <i class="fa fa-shopping-cart "></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<%= render partial: 'orders/form' %>

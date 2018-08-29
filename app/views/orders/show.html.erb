@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<% @order.order_item_codes.each_with_index do |product, index| %>
+	<b><%= @order.product_quantities(product) %> 	$<%= @order.product_total(product) %></b>
+	<br>
+	<% @order.order_items.each do |order_item| %>
+		<%= show_order_item(order_item, product) %>
+	<% end%>
+<% end %>

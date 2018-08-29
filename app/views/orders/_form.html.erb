@@ -1,0 +1,14 @@
+<div class="container">
+  <%= form_tag({controller: 'orders', action: 'create'}, {:method => :post}) do %>
+  
+    <div class="form-group row has-success">
+      <%= label_tag  "Please write product quantity followed by product code to buy "%>
+      <div class="col-sm-10">
+        <%= text_area_tag 'products', '', required: true, class: 'form-control', placeholder: '11 CF' %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= submit_tag 'Save', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pack_quantity: 1
+  available_quantity: 1
+  price: 1.5
+  product: one
+
+two:
+  name: MyString
+  pack_quantity: 1
+  available_quantity: 1
+  price: 1.5
+  product: two
